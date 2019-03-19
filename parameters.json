@@ -1,0 +1,46 @@
+[
+  {
+    "ParameterKey": "KeyName",
+    "ParameterValue": "ghost-deploy"
+  }, 
+  {
+    "ParameterKey": "InstanceType",
+    "ParameterValue": "t2.micro"
+  },
+  {
+    "ParameterKey": "DbName",
+    "ParameterValue": "ghost"
+  },
+  {
+    "ParameterKey": "DbUser",
+    "ParameterValue": "ghostuser"
+  },
+  {
+    "ParameterKey": "DbPassword",
+    "ParameterValue": "<your-instance-db-password>"
+  },
+  {
+    "ParameterKey": "DbRootPassword",
+    "ParameterValue": "<your-rds-database-master-password>"
+  },
+  {
+    "ParameterKey": "SSHLocation",
+    "ParameterValue": "0.0.0.0/0"
+  },
+  {
+    "ParameterKey": "FromAddress",
+    "ParameterValue": "<email-address-approved-as-SES-sender>"
+  },
+  {
+    "ParameterKey": "DomainName",
+    "ParameterValue": "<domain-name-used-in-route-53-hosted-zone>"
+  },
+  {
+    "ParameterKey": "SslEmail",
+    "ParameterValue": "<the-letsencrypt-certificate-SSL-email-address>"
+  },
+  {
+    "ParameterKey": "HostedZoneId",
+    "ParameterValue": "<route-53-hosted-zoneid>"
+  }
+]
