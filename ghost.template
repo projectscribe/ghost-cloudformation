@@ -798,5 +798,42 @@
         ]
       }
     }
-  }
+  },
+  "Outputs" : {
+    "GhostUrl" : {
+      "Description" : "URL to reach the Ghost Front End",
+      "Value" : { "Fn::Join" : [ "", [ "https://", { "Ref": "DomainName" } ] ] },
+      "Export" : { 
+        "Name": {"Fn::Sub": "${AWS::StackName}-GhostUrl" }
+      }
+    },
+    "GhostAdminUrl" : {
+      "Description" : "URL to reach the Ghost Admin Interface",
+      "Value" : { "Fn::Join" : [ "", [ "https://", { "Ref": "DomainName" }, "/admin" ] ] },
+      "Export" : { 
+        "Name": { "Fn::Sub": "${AWS::StackName}-GhostAdminUrl" }
+      }
+    },
+    "InstanceIPAddress" : {
+      "Description" : "IP Address to use to SSH to the Ghsot instance",
+      "Value" : { "Ref": "GhostServerEip" },
+      "Export" : { 
+        "Name": { "Fn::Sub": "${AWS::StackName}-InstanceIPAddress" }
+      }
+    },
+    "RDSDBInstanceHostname" : {
+      "Description" : "Hostname of the Ghost Database",
+      "Value" : { "Fn::GetAtt": [ "GhostDbInstance", "Endpoint.Address" ] },
+      "Export" : {
+        "Name": { "Fn::Sub": "${AWS::StackName}-RDSDBInstanceHostname" }
+      }
+    },
+    "RDSDBInstancePort" : {
+      "Description" : "Port of the Ghost Database",
+      "Value" : { "Fn::GetAtt": [ "GhostDbInstance", "Endpoint.Port" ] },
+      "Export" : { 
+        "Name": {"Fn::Sub": "${AWS::StackName}-RDSDBInstancePort" }
+      }
+    }
+  }  
 }

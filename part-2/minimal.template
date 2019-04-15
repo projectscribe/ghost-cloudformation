@@ -1,0 +1,19 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "My Awesome Project",
+  "Parameters" : {
+    "MyBucketName": {
+      "Default": "some-sort-of-bucketname-that-is-unique-enough-to-work",
+      "Description": "This is a description of what parameter is",
+      "Type": "String"
+    }
+  },
+  "Resources" : {
+    "MyBucket": {
+        "Type": "AWS::S3::Bucket",
+        "Properties": {
+          "BucketName": { "Ref": "MyBucketName" }
+        }
+    }
+  }
+}
